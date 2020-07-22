@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      host: mongodb
+      database: hazelcast
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://discovery-service:8761/eureka}
+  instance:
+    prefer-ip-address: true
+

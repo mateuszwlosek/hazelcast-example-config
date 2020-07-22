@@ -1,0 +1,16 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://discovery-service:8761/eureka}
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  ignoredServices: '*'
+  prefix: /api
+  routes:
+    hazelcastTestService:
+      path: /hazelcast-test-service/**
+      serviceId: hazelcast-test-service
+  host:
+    socket-timeout-millis: 30000
